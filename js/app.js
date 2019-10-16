@@ -1,6 +1,6 @@
 let map, infoWindow;
 // infoWindow ==shows where the user is with pop-up
-
+// =====\/=======\/ initializes map
 function initMap() {
   let options = {
     center: { lat: 41.043042, lng: -73.53257 },
@@ -9,7 +9,7 @@ function initMap() {
   map = new google.maps.Map(document.getElementById("map"), options);
 
   infoWindow = new google.maps.InfoWindow();
-
+  // =====\/\/========\/\/ geolocates on users location by using the IP address
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(p) {
       let position = {

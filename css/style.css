@@ -1,7 +1,7 @@
 #map {
   height: 60vh;
   width: 50vw;
-  border: 2px solid black;
+  border: 2px solid lightgray;
   display: flex;
   margin: auto;
 }
@@ -12,12 +12,24 @@ input {
   font-size: 20px;
   margin: auto;
   display: flex;
+  font-family: "Graduate", cursive;
 }
 h1 {
   text-align: center;
+  font-family: "Graduate", cursive;
 }
 body {
   background-image: url("/GA_basketball_app/vancouver-background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+}
+.footer {
+  text-align: end;
+  color: darkorange;
+}
+.in {
+  font-family: "Graduate", cursive;
+}
+.out {
+  font-family: "Graduate", cursive;
 }
