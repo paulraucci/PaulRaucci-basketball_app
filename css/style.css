@@ -1,5 +1,23 @@
 #map {
-  height: 80vh;
-  width: 70vw;
+  height: 60vh;
+  width: 50vw;
   border: 2px solid black;
+  display: flex;
+  margin: auto;
+}
+input {
+  height: 5vh;
+  width: 70vw;
+  text-align: center;
+  font-size: 20px;
+  margin: auto;
+  display: flex;
+}
+h1 {
+  text-align: center;
+}
+body {
+  background-image: url("/GA_basketball_app/vancouver-background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }

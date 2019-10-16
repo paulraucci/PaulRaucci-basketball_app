@@ -10,13 +10,19 @@
   </head>
   <body>
     <h1>Where we hoopin'?</h1>
+    <!-- <div class="background">
+      <img src="/GA_basketball_app/vancouver-background.jpg" />
+    </div> -->
+    <div class="input">
+      <input id="search" type="text" placeholder="Find a court..." />
+    </div>
     <div id="map"></div>
 
     <!-- Google Maps scripts. -->
     <script
       async
       defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnlo2BrXjk1h0o-EP5022p5LZMjb7cPfs&callback=initMap"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnlo2BrXjk1h0o-EP5022p5LZMjb7cPfs&callback=initMap&libraries=places"
     ></script>
     <script
       src="https://code.jquery.com/jquery-3.4.1.min.js"

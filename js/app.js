@@ -1,4 +1,5 @@
 let map, infoWindow;
+// infoWindow ==shows where the user is with pop-up
 
 function initMap() {
   let options = {
@@ -28,4 +29,40 @@ function initMap() {
     infoWindow.setContent(content);
     infoWindow.open(map);
   }
+  let input = document.getElementById("search");
+  let searchBox = new google.maps.places.SearchBox(input);
+
+  map.addListener("bounds_changed", function() {
+    searchBox.setBounds(map.getBounds());
+  });
+
+  let markers = [];
+
+  searchBox.addListener("places_changed", function() {
+    let places = searchBox.getPlaces();
+    if (places.length === 0) return;
+
+    markers.forEach(function(m) {
+      m.setMap(null);
+    });
+    markers = [];
+
+    let bounds = new google.maps.LatLngBounds();
+    places.forEach(function(p) {
+      if (!p.geometry) return;
+
+      markers.push(
+        new google.maps.Marker({
+          map: map,
+          title: p.name,
+          position: p.geometry.location
+        })
+      );
+      if (p.geometry.viewport) bounds.union(p.geometry.viewport);
+      else bounds.extend(p.geometry.location);
+    });
+    map.fitBounds(bounds);
+  });
 }
+//
+//
