@@ -4,12 +4,16 @@ let map, infoWindow;
 function initMap() {
   let options = {
     center: { lat: 41.043042, lng: -73.53257 },
-    zoom: 15
+    zoom: 15,
+    type: ["gym", "park"],
+    radius: 500
   };
   map = new google.maps.Map(document.getElementById("map"), options);
+  //
 
   infoWindow = new google.maps.InfoWindow();
-  // =====\/\/========\/\/ geolocates on users location by using the IP address
+  //
+  // =====\/\/========\/\/ geolocates on users location by using the IP address and displays a you are here message at users location, if not centers map on provided coordinates upon map initialization.
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(p) {
       let position = {
@@ -23,7 +27,7 @@ function initMap() {
   } else {
     handleLocationError("No geolocation", map.center());
   }
-
+  // populates map with pins of found locations for what the user is searching for
   function handleLocationError(content, position) {
     infoWindow.setPosition(position);
     infoWindow.setContent(content);
@@ -35,7 +39,7 @@ function initMap() {
   map.addListener("bounds_changed", function() {
     searchBox.setBounds(map.getBounds());
   });
-
+  // array is filled with locations of objects as a pin for each search entered
   let markers = [];
 
   searchBox.addListener("places_changed", function() {
@@ -62,10 +66,6 @@ function initMap() {
       else bounds.extend(p.geometry.location);
     });
     map.fitBounds(bounds);
-  });
-  $.ajax({
-    url:
-      "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=41.0430558,-73.532528&radius=500&type=park&keyword=park&key=AIzaSyCnlo2BrXjk1h0o-EP5022p5LZMjb7cPfs"
   });
 }
 //

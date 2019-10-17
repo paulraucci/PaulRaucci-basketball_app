@@ -1,9 +1,25 @@
 #map {
   height: 60vh;
   width: 50vw;
-  border: 2px solid lightgray;
+  border: 2px solid lightgrey;
   display: flex;
   margin: auto;
+}
+.navbar {
+  background-color: transparent;
+  overflow: hidden;
+  font-family: "Graduate", cursive;
+}
+.navbar a {
+  float: left;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  padding: 15px 15px;
+  font-size: 15px;
+}
+.navbar a:hover {
+  background-color: darkorange;
 }
 input {
   height: 5vh;
@@ -13,6 +29,7 @@ input {
   margin: auto;
   display: flex;
   font-family: "Graduate", cursive;
+  background-color: rgba(216, 210, 210, 0.253);
 }
 h1 {
   text-align: center;
