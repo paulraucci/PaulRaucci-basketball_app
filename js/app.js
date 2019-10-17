@@ -63,6 +63,10 @@ function initMap() {
     });
     map.fitBounds(bounds);
   });
+  $.ajax({
+    url:
+      "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=41.0430558,-73.532528&radius=500&type=park&keyword=park&key=AIzaSyCnlo2BrXjk1h0o-EP5022p5LZMjb7cPfs"
+  });
 }
 //
 //
