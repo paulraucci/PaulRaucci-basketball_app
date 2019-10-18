@@ -20,29 +20,40 @@
       <a href="#players">Players</a>
     </div>
     <h1>Where we hoopin'?</h1>
-
+    <!-- map and search -->
     <div class="input">
       <input id="search" type="text" placeholder="Find a court..." />
     </div>
     <div id="map"></div>
-    <!--  -->
-    <div class="buttons">
-      <button class="in" href="#">Check In</button>
-      <button class="out" href="#">Check out</button>
+    <!--     -->
+    <br />
+    <br />
+    <br />
+    <!-- search for an NBA game -->
+    <form>
+      <input
+        type="text"
+        class="teamSearch"
+        placeholder="Search your teams games..."
+      />
+      <input type="submit" name="Submit" />
+    </form>
+    <div id="schedule">
+      <!--  -->
     </div>
-
+    <!-- footer -->
     <footer class="footer">©Paul Raucci 2019 &hearts; For GA</footer>
     <!-- Google Maps scripts. -->
-    <script
-      async
-      defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnlo2BrXjk1h0o-EP5022p5LZMjb7cPfs&callback=initMap&libraries=places"
-    ></script>
     <script
       src="https://code.jquery.com/jquery-3.4.1.min.js"
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
       crossorigin="anonymous"
     ></script>
     <script src="/js/app.js"></script>
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnlo2BrXjk1h0o-EP5022p5LZMjb7cPfs&callback=initMap&libraries=places"
+    ></script>
   </body>
 </html>

@@ -1,3 +1,21 @@
+let teamObject = {};
+let allTeams = [];
+$(() => {
+  const handleData = apiData => {
+    const nba = apiData.data;
+    for (let i = 0; i <= nba.length; i++) {
+      teamObject = {
+        teamId: apiData.data[i].id,
+        city: apiData.data[i].city
+      };
+      allTeams.push(teamObject);
+    }
+  };
+  $.ajax(`https://www.balldontlie.io/api/v1/teams`).then(handleData);
+});
+
+//
+//
 let map, infoWindow;
 // infoWindow ==shows where the user is with pop-up
 // =====\/=======\/ initializes map
@@ -6,7 +24,7 @@ function initMap() {
     center: { lat: 41.043042, lng: -73.53257 },
     zoom: 15,
     type: ["gym", "park"],
-    radius: 500
+    radius: 1000
   };
   map = new google.maps.Map(document.getElementById("map"), options);
   //
@@ -39,7 +57,7 @@ function initMap() {
   map.addListener("bounds_changed", function() {
     searchBox.setBounds(map.getBounds());
   });
-  // array is filled with locations of objects as a pin for each search entered
+  // array is filled with objects with locations as a pin for each search entered
   let markers = [];
 
   searchBox.addListener("places_changed", function() {
@@ -68,5 +86,13 @@ function initMap() {
     map.fitBounds(bounds);
   });
 }
+// $(() => {
+//   $.ajax({
+//     url:
+//       "https://maps.googleapis.com/maps/api/js?key=AIzaSyCnlo2BrXjk1h0o-EP5022p5LZMjb7cPfs&callback=initMap&libraries=places"
+//   }).then(data => {
+//     console.log(data);
+//   });
+// });
 //
 //

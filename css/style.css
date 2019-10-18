@@ -45,19 +45,3 @@ body {
   color: darkorange;
   font-size: 12px;
 }
-.in {
-  font-family: "Graduate", cursive;
-  font-size: 26px;
-  cursor: grab;
-  margin-right: 40px;
-}
-.out {
-  font-family: "Graduate", cursive;
-  font-size: 26px;
-  cursor: grab;
-  margin-left: 40px;
-}
-.buttons {
-  text-align: center;
-  margin-top: 20px;
-}
