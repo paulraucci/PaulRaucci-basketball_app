@@ -1,17 +1,44 @@
 let teamObject = {};
 let allTeams = [];
+let teamSchedule = [];
 $(() => {
   const handleData = apiData => {
     const nba = apiData.data;
-    for (let i = 0; i <= nba.length; i++) {
+    for (let i = 0; i < nba.length; i++) {
+      console.log(nba[i]);
       teamObject = {
-        teamId: apiData.data[i].id,
-        city: apiData.data[i].city
+        teamId: nba[i].id,
+        city: nba[i].city,
+        fullName: nba[i].full_name
       };
       allTeams.push(teamObject);
     }
   };
-  $.ajax(`https://www.balldontlie.io/api/v1/teams`).then(handleData);
+  const handleTeam = teamData => {
+    for (let i = 0; i < allTeams.length; i++) {
+      const $team = $("<button>")
+        .attr("id", `${allTeams[i].teamId}`)
+        .attr("class", "getSchedule")
+        .text(`${allTeams[i].fullName}`)
+        .addClass("teamName");
+      $(".teamDropdown").append($team);
+    }
+    $(".getSchedule").on("click", event => {
+      event.currentTarget.id;
+      const teamName = $(".selectTeam");
+      const selectTeam = teamName.val();
+      const teamData = allTeams;
+      console.log(event);
+      $.ajax(
+        `https://www.balldontlie.io/api/v1/games?seasons[]=2019&team_ids[]=${currentTarget.id}`
+      ).then(data => {
+        console.log(data);
+      });
+    });
+  };
+  $.ajax(`https://www.balldontlie.io/api/v1/teams`)
+    .then(handleData)
+    .then(handleTeam);
 });
 
 //
