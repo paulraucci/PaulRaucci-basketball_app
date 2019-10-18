@@ -21,7 +21,7 @@ $(() => {
         .attr("class", "getSchedule")
         .text(`${allTeams[i].fullName}`)
         .addClass("teamName");
-      $(".teamDropdown").append($team);
+      $(".dropdown").append($team);
     }
     $(".getSchedule").on("click", event => {
       event.currentTarget.id;
@@ -30,7 +30,7 @@ $(() => {
       const teamData = allTeams;
       console.log(event);
       $.ajax(
-        `https://www.balldontlie.io/api/v1/games?seasons[]=2019&team_ids[]=${currentTarget.id}`
+        `https://www.balldontlie.io/api/v1/games?seasons[]=2019&team_ids[]=${event.currentTarget.id}`
       ).then(data => {
         console.log(data);
       });
