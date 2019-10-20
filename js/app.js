@@ -5,7 +5,7 @@ $(() => {
   const handleData = apiData => {
     const nba = apiData.data;
     for (let i = 0; i < nba.length; i++) {
-      console.log(nba[i]);
+      // console.log(nba[i]);
       teamObject = {
         teamId: nba[i].id,
         city: nba[i].city,
@@ -17,23 +17,26 @@ $(() => {
   const handleTeam = teamData => {
     for (let i = 0; i < allTeams.length; i++) {
       const $team = $("<button>")
-        .attr("id", `${allTeams[i].teamId}`)
+        .attr("id", `${allTeams[i].fullName}`)
         .attr("class", "getSchedule")
         .text(`${allTeams[i].fullName}`)
         .addClass("teamName");
       $(".dropdown").append($team);
     }
     $(".getSchedule").on("click", event => {
-      event.currentTarget.id;
+      event.currentTarget.fullName;
       const teamName = $(".selectTeam");
-      const selectTeam = teamName.val();
-      const teamData = allTeams;
+      // const selectTeam = teamName.val();
+      // const teamData = allTeams;
       console.log(event);
+      const schedule = $("<li>");
+
+      schedule.attr("class", "teamSchedule");
+      $(".viewSchedule").append(schedule);
       $.ajax(
+        // changed event.currentTarget.fullname to id
         `https://www.balldontlie.io/api/v1/games?seasons[]=2019&team_ids[]=${event.currentTarget.id}`
-      ).then(data => {
-        console.log(data);
-      });
+      ).then();
     });
   };
   $.ajax(`https://www.balldontlie.io/api/v1/teams`)
