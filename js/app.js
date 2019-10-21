@@ -22,14 +22,26 @@ $(() => {
         .attr("class", "getSchedule")
         .text(`${allTeams[i].fullName}`)
         .addClass("teamName");
-      $(".dropdown").append($team);
+      $(".buttonField").append($team);
     }
+    //
+    const $reset = $("<button>")
+      .attr("id", "resetButton")
+      .text("Choose another team");
+    $("#schedule").append($reset);
+    $("#resetButton").on("click", event => {
+      event.currentTarget.reset;
+      $reset = location.reload(true);
+    });
+
+    //
     $(".getSchedule").on("click", event => {
       event.currentTarget.fullName;
       const teamName = $(".selectTeam");
       const selectTeam = teamName.val();
       const teamData = allTeams;
-      console.log(event.currentTarget.id);
+      //
+      // console.log(event.currentTarget.id);
 
       $.ajax(
         // changed event.currentTarget.fullname to id
@@ -42,21 +54,27 @@ $(() => {
             visitorTeam: dates.data[i].visitor_team.name,
             gameTime: dates.data[i].status
           };
+
+          const gameDate = `${scheduleObject.gameDate}`;
+
+          const newDate = new Date(gameDate);
           //
           teamSchedule.push(scheduleObject);
           //
-          console.log(`${scheduleObject.gameDate.toDateString()}`);
+          // console.log(newDate.toDateString());
           //
           const schedule = $("<li>").text(
-            `The ${scheduleObject.homeTeam} are playing the ${scheduleObject.visitorTeam} on ${scheduleObject.gameDate} at ${scheduleObject.gameTime}`
+            `The ${scheduleObject.homeTeam} are playing the ${
+              scheduleObject.visitorTeam
+            } on ${newDate.toDateString()} at ${scheduleObject.gameTime}`
           );
 
           schedule.attr("class", "teamSchedule");
           $(".viewSchedule").append(schedule);
         }
 
-        console.log(teamSchedule);
-        console.log(dates.data);
+        // console.log(teamSchedule);
+        // console.log(dates.data);
       });
     });
   };

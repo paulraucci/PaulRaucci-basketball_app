@@ -12,7 +12,7 @@
   font-size: 15px;
 }
 .navbar a:hover {
-  background-color: red;
+  background-color: #c9082a;
 }
 input {
   height: 5vh;
@@ -43,7 +43,7 @@ body {
 }
 .footer {
   text-align: end;
-  color: red;
+  color: #c9082a;
   font-size: 12px;
   font: bold;
 }
@@ -55,7 +55,7 @@ body {
   border-radius: 6px;
 }
 .teamName:hover {
-  background-color: red;
+  background-color: #c9082a;
   color: white;
 }
 .nbalogo {
@@ -74,9 +74,13 @@ body {
   display: flex;
   margin: auto;
 }
+.buttonField {
+  margin-left: 10vw;
+  margin-right: 10vw;
+}
 .scheduleWindow {
   height: 20vh;
-  width: 80vw;
+  width: 50vw;
   border: solid lightgray 2px;
   overflow-y: scroll;
   margin: 10px auto;
@@ -88,8 +92,16 @@ body {
   height: 5vh;
   border-bottom: white 1px solid;
   list-style: none;
-  margin: 5px;
+  margin: 20px;
 }
 .viewSchedule {
   padding-left: 0;
+}
+#resetButton {
+  background-color: #c9082a;
+  color: #17408b;
+  font-family: "Graduate", cursive;
+  margin-left: 45vw;
+  margin-right: 45vw;
+  margin-bottom: 20px;
 }
