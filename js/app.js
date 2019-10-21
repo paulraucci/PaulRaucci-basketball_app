@@ -1,4 +1,5 @@
 let teamObject = {};
+let scheduleObject = {};
 let allTeams = [];
 let teamSchedule = [];
 $(() => {
@@ -17,7 +18,7 @@ $(() => {
   const handleTeam = teamData => {
     for (let i = 0; i < allTeams.length; i++) {
       const $team = $("<button>")
-        .attr("id", `${allTeams[i].fullName}`)
+        .attr("id", `${allTeams[i].teamId}`)
         .attr("class", "getSchedule")
         .text(`${allTeams[i].fullName}`)
         .addClass("teamName");
@@ -26,17 +27,37 @@ $(() => {
     $(".getSchedule").on("click", event => {
       event.currentTarget.fullName;
       const teamName = $(".selectTeam");
-      // const selectTeam = teamName.val();
-      // const teamData = allTeams;
-      console.log(event);
-      const schedule = $("<li>");
+      const selectTeam = teamName.val();
+      const teamData = allTeams;
+      console.log(event.currentTarget.id);
 
-      schedule.attr("class", "teamSchedule");
-      $(".viewSchedule").append(schedule);
       $.ajax(
         // changed event.currentTarget.fullname to id
-        `https://www.balldontlie.io/api/v1/games?seasons[]=2019&team_ids[]=${event.currentTarget.id}`
-      ).then();
+        `https://www.balldontlie.io/api/v1/games?seasons[]=2019&&team_ids[]=${event.currentTarget.id}`
+      ).then(dates => {
+        for (let i = 0; i < dates.data.length; i++) {
+          scheduleObject = {
+            gameDate: dates.data[i].date,
+            homeTeam: dates.data[i].home_team.name,
+            visitorTeam: dates.data[i].visitor_team.name,
+            gameTime: dates.data[i].status
+          };
+          //
+          teamSchedule.push(scheduleObject);
+          //
+          console.log(`${scheduleObject.gameDate.toDateString()}`);
+          //
+          const schedule = $("<li>").text(
+            `The ${scheduleObject.homeTeam} are playing the ${scheduleObject.visitorTeam} on ${scheduleObject.gameDate} at ${scheduleObject.gameTime}`
+          );
+
+          schedule.attr("class", "teamSchedule");
+          $(".viewSchedule").append(schedule);
+        }
+
+        console.log(teamSchedule);
+        console.log(dates.data);
+      });
     });
   };
   $.ajax(`https://www.balldontlie.io/api/v1/teams`)
