@@ -19,7 +19,6 @@ $(() => {
     for (let i = 0; i < allTeams.length; i++) {
       const $team = $("<button>")
         .attr("id", `${allTeams[i].teamId}`)
-        .attr("class", "getSchedule")
         .text(`${allTeams[i].fullName}`)
         .addClass("teamName");
       $(".buttonField").append($team);
@@ -35,7 +34,7 @@ $(() => {
     });
 
     //
-    $(".getSchedule").on("click", event => {
+    $(".teamName").on("click", event => {
       event.currentTarget.fullName;
       const teamName = $(".selectTeam");
       const selectTeam = teamName.val();
@@ -61,7 +60,7 @@ $(() => {
           //
           teamSchedule.push(scheduleObject);
           //
-          // console.log(newDate.toDateString());
+          // console.log(gameDate);
           //
           const schedule = $("<li>").text(
             `The ${scheduleObject.homeTeam} are playing the ${
