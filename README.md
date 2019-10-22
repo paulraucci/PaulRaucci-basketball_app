@@ -18,7 +18,8 @@
   map = new google.maps.Map(document.getElementById("map"), options);
 ```
   When it became apparent that I was not at the skill level yet to accomplish this task, I pivoted to the application you see now. One of my hang-ups with this new set of code was how to format the date returned by the ajax call.
-  ```for (let i = 0; i < dates.data.length; i++) {
+  ```javascript
+  for (let i = 0; i < dates.data.length; i++) {
           scheduleObject = {
             gameDate: dates.data[i].date,
             homeTeam: dates.data[i].home_team.name,
@@ -40,4 +41,7 @@
             } on ${newDate.toDateString()} at ${scheduleObject.gameTime}`
           );
 ```
-  
+  ##Future Updates
+  	A few things that I would like to add to this application would be displaying wins/losses, toggling the season and displaying a mini box score.
+	
+	
