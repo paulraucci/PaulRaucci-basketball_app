@@ -97,6 +97,7 @@ body {
   background-image: url("/GA_basketball_app/vancouver-background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
 }
 .footer {
   text-align: end;
@@ -148,7 +149,6 @@ body {
   opacity: 0.6;
 }
 .teamSchedule {
-  height: 5vh;
   border-bottom: white 1px solid;
   list-style: none;
   margin: 20px;
@@ -165,8 +165,39 @@ body {
   word-wrap: break-word;
   margin-left: 40vw;
   margin-right: 45vw;
-  width: 13vw;
-  height: 8vh;
+  /* width: 13vw;
+  height: 8vh; */
   margin-bottom: 20px;
   border-radius: 20px;
+}
+
+@media only screen and (max-width: 800px) {
+  .scheduleWindow {
+    height: 45vh;
+    width: 75vw;
+    border: solid lightgray 2px;
+    overflow-y: scroll;
+    margin: 10px auto;
+    border-radius: 10px;
+    background-color: ghostwhite;
+    opacity: 0.6;
+  }
+  .navbar {
+    display: inline-grid;
+  }
+  #resetButton {
+    max-width: 100%;
+    background-color: #c9082a;
+    color: #17408b;
+    font-family: "Graduate", cursive;
+    font-size: 0.8em;
+    word-wrap: break-word;
+    margin-left: 40vw;
+    margin-right: 45vw;
+    margin-bottom: 20px;
+    border-radius: 20px;
+  }
+  .buttonField {
+    display: grid;
+  }
 }
