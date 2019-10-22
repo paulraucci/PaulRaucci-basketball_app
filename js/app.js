@@ -154,13 +154,5 @@ function initMap() {
     map.fitBounds(bounds);
   });
 }
-// $(() => {
-//   $.ajax({
-//     url:
-//       "https://maps.googleapis.com/maps/api/js?key=AIzaSyCnlo2BrXjk1h0o-EP5022p5LZMjb7cPfs&callback=initMap&libraries=places"
-//   }).then(data => {
-//     console.log(data);
-//   });
-// });
 //
 //
