@@ -14,6 +14,63 @@
 .navbar a:hover {
   background-color: #c9082a;
 }
+.home {
+  transition: all 0.5s;
+}
+.home span {
+  transition: 0.5s;
+}
+.home span:after {
+  content: "\00bb";
+  opacity: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+.home:hover span {
+  padding-right: 20px;
+}
+.home:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+.findArena {
+  transition: all 0.5s;
+}
+.findArena span {
+  transition: 0.5s;
+}
+.findArena span:after {
+  content: "\00bb";
+  opacity: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+.findArena:hover span {
+  padding-right: 20px;
+}
+.findArena:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+.teams {
+  transition: all 0.5s;
+}
+.teams span {
+  transition: 0.5s;
+}
+.teams span:after {
+  content: "\00bb";
+  opacity: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+.teams:hover span {
+  padding-right: 20px;
+}
+.teams:hover span:after {
+  opacity: 1;
+  right: 0;
+}
 input {
   height: 5vh;
   width: 70vw;
