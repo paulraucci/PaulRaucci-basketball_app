@@ -81,7 +81,11 @@ $(() => {
     .then(handleData)
     .then(handleTeam);
 });
-
+//
+//
+//
+//
+// =============MAP===========================
 //
 //
 let map, infoWindow;

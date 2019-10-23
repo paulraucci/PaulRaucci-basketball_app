@@ -81,9 +81,7 @@ input {
   font-family: "Graduate", cursive;
   background-color: rgba(216, 210, 210, 0.253);
 }
-body {
-  font-family: "Graduate", cursive;
-}
+
 h1 {
   text-align: center;
   margin-top: 50px;
@@ -94,16 +92,17 @@ p {
   margin-top: 0;
 }
 body {
+  font-family: "Graduate", cursive;
   background-image: url("/GA_basketball_app/vancouver-background.jpg");
   background-repeat: no-repeat;
-  background-size: cover;
   background-position: center;
 }
 .footer {
-  text-align: end;
   color: #c9082a;
   font-size: 12px;
   font: bold;
+  bottom: 0;
+  position: absolute;
 }
 .teamName {
   display: inline;
@@ -146,7 +145,7 @@ body {
   margin: 10px auto;
   border-radius: 10px;
   background-color: ghostwhite;
-  opacity: 0.6;
+  opacity: 0.7;
 }
 .teamSchedule {
   border-bottom: white 1px solid;
