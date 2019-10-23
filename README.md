@@ -1,6 +1,12 @@
 ## Hardwood Season
   Is an application with the purpose of choosing your favorite NBA team from a field of buttons and displaying the date, time and team names. The application has a secondary feature of a map with a search bar that will let the user search for any location, hopefully your teams arena or just the location of an NBA game!
-
+## Application URL
+* [Hardwood Season](http://hardwoodseason.surge.sh/)
+## Technologies
+* HTML
+* CSS
+* JavaScript
+* JQuery
 ## Approach
   Alot of online sports magazines have great articles, some will give information on team records and maybe even an upcoming game or two. What I was looking to accomplish was make an easy application that would give the user all of a specific NBA teams games for a season.
 	
@@ -41,7 +47,10 @@
             } on ${newDate.toDateString()} at ${scheduleObject.gameTime}`
           );
 ```
-  ##Future Updates
-  	A few things that I would like to add to this application would be displaying wins/losses, toggling the season and displaying a mini box score.
-	
+## Future Updates
+  A few things that I would like to add to this application would be displaying wins/losses, toggling the season and displaying a mini box score etc...
+
+## API's Used
+  * [Ball Dont Lie](https://www.balldontlie.io/api/v1/games?seasons[]=2019&team_ids[]=1)
+  * [Google Maps](https://maps.googleapis.com/maps/api/js?key=AIzaSyCnlo2BrXjk1h0o-EP5022p5LZMjb7cPfs&callback=initMap&libraries=places)
 	
