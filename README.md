@@ -48,7 +48,7 @@
           );
 ```
 ## Future Updates
-  A few things that I would like to add to this application would be displaying wins/losses, toggling the season and displaying a mini box score.
+  A few things that I would like to add to this application would be displaying wins/losses, toggling the season and displaying a mini box score etc...
 
 ## API's Used
   * [Ball Dont Lie](https://www.balldontlie.io/api/v1/games?seasons[]=2019&team_ids[]=1)
