@@ -199,4 +199,11 @@ body {
   .buttonField {
     display: grid;
   }
+  .footer {
+    color: #c9082a;
+    font-size: 12px;
+    font: bold;
+    bottom: 0;
+    position: sticky;
+  }
 }
